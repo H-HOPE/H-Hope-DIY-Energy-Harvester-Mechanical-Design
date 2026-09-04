@@ -31,6 +31,16 @@
     - [Without DIY Generator](#without-diy-generator)
   - [Assembly of the cylinder, springs and vertical rod to the Harvester frame](#assembly-of-the-cylinder-springs-and-vertical-rod-to-the-harvester-frame)
   - [Test of the operation](#test-of-the-operation)
+- [Water-channel measurement results](#water-channel-measurement-results)
+  - [Measurement parameters](#measurement-parameters)
+    - [Cylinder size](#cylinder-size)
+    - [Water velocity](#water-velocity)
+    - [Oscillation amplitude](#oscillation-amplitude)
+  - [Measurements results](#measurements-results)
+    - [Best-performing configuration](#best-performing-configuration)
+    - [Cylinder size comparison](#cylinder-size-comparison)
+    - [Effect of water velocity](#effect-of-water-velocity)
+  - [Practical build recommendation](#practical-build-recommendation)
 
 ---
 
@@ -508,8 +518,116 @@ The H-HOPE energy harvester was tested in a water channel at a constant flow vel
 <b>Fig. 36:</b> H-HOPE energy harvester in operation during water-channel testing at a flow velocity of 0.9 m/s (water depth 25 cm).
 </p>
 
----
 
+## Water-channel measurement results
+
+To evaluate the performance of the energy harvester, a series of experimental tests was carried out with different combinations of test parameters. The main test parameters were the cylinder diameter, water velocity, and oscillation amplitude. These parameters were varied to investigate their influence on the oscillatory response of the cylinder and the resulting mechanical power transfer to the generator.
+
+Three cylinder sizes were tested under different flow conditions and prescribed oscillation amplitudes. For each test configuration, the oscillation frequency and generator torque were measured while the electrical load was gradually increased. This testing procedure allowed us to evaluate how individual parameters affect the operation and performance of the energy harvester.
+
+A sample video of the test measurements is available here: https://youtu.be/U6G2Xj3FoK8
+
+### Measurement parameters
+
+#### Cylinder size
+
+Three 3D-printed cylinders (A), with diameters of 50 (blue), 60 (black), and 70 mm (red), as shown in Figure 37, were tested. All cylinders had a length of 0.25 m. The relative density and mass of each cylinder can be seen in the table below.
+
+| Cylinder diameter | Relative density | Mass |
+|---:|---:|---:|
+| 50 mm | 0.690 | 0.366 kg |
+| 60 mm | 0.524 | 0.400 kg |
+| 70 mm | 0.446 | 0.463 kg |
+
+<p align="center">
+  <img src="./images/Assembly/Tested_cylinders.jpg" alt="H-HOPE harvester" width="70%" />
+</p>
+<p align="center"><b>Fig. 37: </b>3D-printed cylinders, with diameters of 50 (blue), 60 (black), and 70 mm (red)</p>
+
+The return springs (B) were made from 3 mm stainless-steel rod and had a free length of 350 mm. The water channel was 500 mm wide and 500 mm high, as visible in Figure 35 and 36. 
+
+#### Water velocity
+
+The following combinations of water velocity and water depth in the water channel were tested:
+
+| Water velocity | Water depth |
+|---:|---:|
+| 0.70 m/s | 210 mm |
+| 0.80 m/s | 210 mm |
+| 0.90 m/s | 210 mm |
+| 1.10 m/s | 180 mm |
+| 1.20 m/s | 200 mm |
+
+#### Oscilation amplitude
+
+Cylinder displacement is expressed as **oscillation amplitude**. The oscillation amplitude is set by the position where the vertical connecting rod (E) is attached to the flywheel (G) as visible in Figure 19. Moving the attachment point closer to or further from the shaft (I) changes the vertical travel of the cylinder. Therefore, the amplitude is a fixed mechanical setting for each test and does not change freely with water velocity.
+
+Oscillation amplitudes of 20, 30 and 40 mm were tested (Figure 38). During each test, the oscillation frequency and torque on the generator stator were measured at different electrical loads. The electrical load was increased until the maximum torque at which the cylinder could still oscillate.
+
+
+<p align="center">
+  <img src="./images/Assembly/Mouting_points.jpg" alt="H-HOPE harvester" width="70%" />
+</p>
+<p align="center"><b>Fig. 38: </b>Mouting points for oscillation amplitudes of 20, 30 and 40 mm are indicated by black arrows.</p>
+
+### Measurements results
+
+#### Best-performing configuration
+
+The **60 mm cylinder gave the best overall results** during the water-channel measurements.
+
+**The highest measured efficiency was obtained with the 60 mm cylinder at a water velocity of 0.80 m/s and an oscillation amplitude of 30 or 40 mm. The efficiency was slightly above 8.5%**.
+
+When the results from the different amplitudes were compared, the 60 mm cylinder also had the highest average oscillation frequency, generated power and efficiency.
+
+The difference of power output and efficiency between the **30 and 40 mm** amplitudes was relatively small. For general operation, an oscillation amplitude between 30 and 40 mm is recommended.
+
+If the primary objective is to maximize generated power rather than efficiency, the highest measured value was achieved at a water velocity of 1.20 m/s using the 60 mm cylinder and an amplitude of 40 mm, resulting in a generated power of **0.46 W**. Although the higher water velocity increased the power output, the corresponding efficiency was lower than that obtained at a water velocity of 0.80 m/s. The table below summarizes the recommended configurations for the two main design objectives.
+
+| Design objective | Recommended configuration | Result |
+|---|---|---|
+| Highest efficiency | 60 mm cylinder diameter, 30-40 mm oscilation amplitude, 0.80 m/s water velocity | efficiency around 8.5% |
+| Highest power output | 60 mm cylinder diameter, 40 mm oscilation amplitude, 1.20 m/s water velocity | Power output of 0.46 W |
+
+
+#### Cylinder size comparison
+
+The table below summarizes the performance of the three tested cylinder diameters. The comparison shows that the 60 mm cylinder provided the best overall performance, while the 50 mm and 70 mm cylinders produced lower average power and efficiency under the tested conditions.
+
+| Cylinder | Performance Assessment |
+|---|---|
+| **50 mm** | The 50 mm cylinder produced moderate power and efficiency. Its highest efficiency was measured at 0.80 m/s water velocity, while the generated power at 1.20 m/s water velocity. Overall, its average performance was lower than that of the 60 mm cylinder. |
+| **60 mm** | The 60 mm cylinder gave the best overall results. It had the highest average oscillation frequency, power and efficiency. The highest efficiency was measured at 0.80 m/s water velocity with a 30-40 mm amplitude, while the highest power was measured at 1.20 m/s water velocity. |
+| **70 mm** | The 70 mm cylinder had a lower average oscillation frequency and efficiency than the 60 mm cylinder. Its highest efficiency was measured at 0.90 m/s water velocity. Continuous oscillation could not be maintained at some operating points. |
+
+The measurements show that increasing the cylinder diameter does not automatically improve H-HOPE harvester performance.
+
+A larger cylinder is exposed to a larger hydrodynamic force, but the final oscillation also depends on cylinder mass, natural frequency, spring stiffness, mechanical tuning and generator load. For the tested H-HOPE harvester configuration, **the 60 mm** cylinder provided the best power and efficiency results.
+
+
+#### Effect of water velocity
+
+Water velocity had a strong influence on the operation of the H-HOPE harvester.
+
+At a water velocity below 0.70 m/s, the oscillation frequency and generated power were generally the lowest, which can be attributed to the lower kinetic energy available from the water flow. At water velocity of 0.80 m/s, the 50 and 60 mm cylinders achieved their highest efficiencies, indicating favorable conditions for converting the vortex-induced oscillations into electrical power. Results indicate that water velocities between 0.80 and 0.90 m/s provided the most favorable conditions for the H-HOPE harvester operation. At water velocity of 1.10 m/s, the oscillation frequency, generated power, and efficiency decreased for all three cylinders, suggesting a less favorable operating point for the H-HOPE harvester. At water velocity of 1.20 m/s, the oscillation frequency and generated power increased again, resulting in the highest absolute power output measured during the measurements; however, the efficiency remained lower than at water velocity of 0.80 m/s. 
+
+Overall, the results show that increasing water velocity does not necessarily lead to higher efficiency of the H-HOPE harvester, as its performance also depends on the interaction between the vortex-shedding frequency and the dynamic characteristics of the system.
+
+The measurements show that **water velocity has a larger effect on oscillation frequency, generated power and efficiency than the selected oscillation amplitude**.
+
+### Practical build recommendation
+
+Based on the water-channel measurements, the following configuration is recommended for H-HOPE harvester operation:
+
+- use a **60 mm diameter cylinder**;
+- use an **oscillation amplitude between 30 and 40 mm**; and
+- aim for a water velocity of approximately **0.80 m/s**.
+
+This configuration gave the best combination of efficiency and stable operation during testing.
+
+If the main goal is to obtain the highest possible generated power, a water velocity of **1.20 m/s** can be used. The generated power is higher at this water velocity, but the efficiency is lower.
+
+---
 
 <div align="center">
 <img src="./images/H-HOPE_footer.JPG" alt="drawing" width="1472"/>
